@@ -1,26 +1,136 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #021913;
+  --foreground-shade-1: #323232;
+  --foreground-shade-2: #4e5255;
+  --foreground-shade-3: #8d8e90;
+  --foreground-shade-4: #b1b3b2;
+  --foreground-shade-5: #dddddd;
+  --primary: #009D77;
+  --primary-shade-1: #39edc0;
+  --primary-shade-2: #bef7e8;
+  --primary-shade-3: #dcfbf3;
+  --primary-shade-4: #e7faf6;
+  --primary-shade-5: #f1fdf9;
+  --secondary: #EA4C89;
+  --secondary-shade-1: #fc9ac0;
+  --secondary-shade-2: #fce5ed;
+  --secondary-shade-3: #fff4f8;
+  --secondary-shade-4: #fef8fa;
+  --accent: #932EFA;
+  --accent-shade-1: #b173f2;
+  --accent-shade-2: #dfc4fb;
+  --accent-shade-3: #eee1fd;
+  --accent-shade-4: #fbf5ff;
+  --warning: #FBECC0;
+  --back: #e7e7e7;
+  --back-shade-1: #f0f0f0;
+  --back-shade-2: #f8f8f8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-shade-1: var(--foreground-shade-1);
+  --color-foreground-shade-2: var(--foreground-shade-2);
+  --color-foreground-shade-3: var(--foreground-shade-3);
+  --color-foreground-shade-4: var(--foreground-shade-4);
+  --color-foreground-shade-5: var(--foreground-shade-5);
+  --color-primary: var(--primary);
+  --color-primary-shade-1: var(--primary-shade-1);
+  --color-primary-shade-2: var(--primary-shade-2);
+  --color-primary-shade-3: var(--primary-shade-3);
+  --color-primary-shade-4: var(--primary-shade-4);
+  --color-primary-shade-5: var(--primary-shade-5);
+  --color-secondary: var(--secondary);
+  --color-secondary-shade-1: var(--secondary-shade-1);
+  --color-secondary-shade-2: var(--secondary-shade-2);
+  --color-secondary-shade-3: var(--secondary-shade-3);
+  --color-secondary-shade-4: var(--secondary-shade-4);
+  --color-accent: var(--accent);
+  --color-accent-shade-1: var(--accent-shade-1);
+  --color-accent-shade-2: var(--accent-shade-2);
+  --color-accent-shade-3: var(--accent-shade-3);
+  --color-accent-shade-4: var(--accent-shade-4);
+  --color-warning: var(--warning);
+  --color-back: var(--back);
+  --color-back-shade-1: var(--back-shade-1);
+  --color-back-shade-2: var(--back-shade-2);
+  --font-bl: var(--bl);
+  --font-bm: var(--bm);
+  --font-br: var(--br);
+  --font-bs: var(--bs);
+  --animate-enter: enter 1s ease-in-out;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .bl {
+    @apply text-[18px] font-normal;
+  }
+  .bm {
+    @apply text-[16px] font-medium;
+  }
+  .br {
+    @apply text-[16px] font-normal;
+  }
+  .bs {
+    @apply text-[12px] font-normal;
+  }
+  .btn {
+    @apply py-4 px-6 rounded-full border font-medium bg-white hover:bg-secondary hover:text-white hover:border-secondary transition-all cursor-pointer;
+  }
+}
+
+h1 {
+  @apply text-[75px] font-semibold leading-24;
+}
+
+h2 {
+  @apply text-[48px] font-semibold leading-14;
+}
+
+h3 {
+  @apply text-[32px] font-semibold;
+}
+
+h4 {
+  @apply text-[24px] font-semibold;
+}
+
+h5 {
+  @apply text-[24px] font-medium;
+}
+
+h6 {
+  @apply text-[20px] font-medium;
+}
+
+section {
+  @apply container mx-auto max-w-7xl px-5 xl:px-0 py-24 space-y-12;
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0%;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
 }
