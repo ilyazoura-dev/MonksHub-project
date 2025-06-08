@@ -112,61 +112,63 @@ export default function Home() {
 
   return (
     <main>
-      <div className="bg-gradient-to-b from-primary/50 to-transparent pt-10">
-        <section className="relative">
-          <div className="space-y-4">
-            <div className="px-4 flex items-center gap-3 w-fit mx-auto py-1 rounded-full bg-background/50 backdrop-blur-lg border border-white/25">
-              <AcademicCapIcon className="size-6 text-primary" />
-              <p className="bm">Learn From the Top Experts</p>
-            </div>
-            <h1 className="max-w-4xl mx-auto text-center">
-              Building Futures Together By Empowering Minds
-            </h1>
-            <p className="bl max-w-2xl mx-auto text-center">
-              Join us in shaping a brighter future by nurturing potential,
-              empowering minds, and fostering growth through education and
-              collaboration.
-            </p>
-            <br />
-            <div className="bg-white border border-gray-500/25 rounded-full w-fit mx-auto flex items-center gap-3 pr-6">
-              <input
-                type="text"
-                placeholder="e.g. UX Design"
-                className="w-full h-full py-4 px-8 focus:outline-none rounded-full "
-              />
-              <MagnifyingGlassIcon className="size-8 cursor-pointer" />
-            </div>
-          </div>
-          <Image
-            src="/code_window.svg"
-            alt="code_window"
-            height={1000}
-            width={1000}
-            className="absolute left-32 bottom-96 w-32 blur-xs"
-          />
-          <Image
-            src="/brush_ill.svg"
-            alt="brush_illustration"
-            height={1000}
-            width={1000}
-            className="absolute right-32 bottom-96 w-32 blur-xs"
-          />
-          <div className="flex gap-5 translate-y-40">
-            {mentorImages.map((m, i) => (
-              <div
-                key={i}
-                className="w-full rounded-full overflow-hidden odd:bg-secondary-shade-2 border odd:border-secondary-shade-1 even:bg-primary-shade-2 even:border-primary-shade-1"
-              >
-                <Image
-                  src={`/mentors/${m}.png`}
-                  alt={m}
-                  height={2000}
-                  width={2000}
-                />
+      <div className="bg-gradient-to-r from-primary-shade-2 via-secondary-shade-2 to-accent-shade-2 pt-10">
+        <div className="bg-gradient-to-t from-back-shade-2 from-0% to-transparent to-60%">
+          <section className="relative">
+            <div className="space-y-4">
+              <div className="px-4 flex items-center gap-3 w-fit mx-auto py-1 rounded-full bg-background/50 backdrop-blur-lg border border-white/25">
+                <AcademicCapIcon className="size-6 text-primary" />
+                <p className="bm">Learn From the Top Experts</p>
               </div>
-            ))}
-          </div>
-        </section>
+              <h1 className="max-w-4xl mx-auto text-center">
+                Building Futures Together By Empowering Minds
+              </h1>
+              <p className="bl max-w-2xl mx-auto text-center">
+                Join us in shaping a brighter future by nurturing potential,
+                empowering minds, and fostering growth through education and
+                collaboration.
+              </p>
+              <br />
+              <div className="bg-white border border-gray-500/25 rounded-full w-fit mx-auto flex items-center gap-3 pr-6">
+                <input
+                  type="text"
+                  placeholder="e.g. UX Design"
+                  className="w-full h-full py-4 px-8 focus:outline-none rounded-full "
+                />
+                <MagnifyingGlassIcon className="size-8 cursor-pointer" />
+              </div>
+            </div>
+            <Image
+              src="/code_window.svg"
+              alt="code_window"
+              height={1000}
+              width={1000}
+              className="absolute left-32 bottom-96 w-32 blur-xs"
+            />
+            <Image
+              src="/brush_ill.svg"
+              alt="brush_illustration"
+              height={1000}
+              width={1000}
+              className="absolute right-32 bottom-96 w-32 blur-xs"
+            />
+            <div className="flex gap-5 translate-y-40">
+              {mentorImages.map((m, i) => (
+                <div
+                  key={i}
+                  className="w-full rounded-full overflow-hidden odd:bg-secondary-shade-2 border odd:border-secondary-shade-1 even:bg-primary-shade-2 even:border-primary-shade-1"
+                >
+                  <Image
+                    src={`/mentors/${m}.png`}
+                    alt={m}
+                    height={2000}
+                    width={2000}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
       <div className="bg-back-shade-2 pt-24">
         <section>
