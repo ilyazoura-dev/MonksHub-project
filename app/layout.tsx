@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
+import Header from "./components/ui/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfitSerif.className} antialiased`}>{children}</body>
+      <body className={`${outfitSerif.className} antialiased`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

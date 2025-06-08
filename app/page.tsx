@@ -112,7 +112,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="bg-gradient-to-b from-primary/50 to-transparent">
+      <div className="bg-gradient-to-b from-primary/50 to-transparent pt-10">
         <section className="relative">
           <div className="space-y-4">
             <div className="px-4 flex items-center gap-3 w-fit mx-auto py-1 rounded-full bg-background/50 backdrop-blur-lg border border-white/25">
