@@ -11,14 +11,25 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Btn from "./Btn";
+
 interface NavLink {
   icon: React.ReactNode;
-  text: string;
+  text: Tabs;
 }
+
+type Tabs =
+  | "all categories"
+  | "development"
+  | "UI/UX design"
+  | "project management"
+  | "accounting"
+  | "marketing";
+
 const CourseNav = () => {
   const [active, setActive] = useState(0);
+  const [tab, setTab] = useState<Tabs>("all categories");
 
   const navLinks: NavLink[] = [
     {
@@ -46,13 +57,25 @@ const CourseNav = () => {
       text: "marketing",
     },
   ];
+
+  const coursesFilter = courses.filter((v) => {
+    if (tab === "all categories") {
+      return courses;
+    } else {
+      return v.category === tab;
+    }
+  });
   return (
     <div className="space-y-8">
       <div className="flex gap-4 justify-center">
         {navLinks.map((n, i) => (
           <button
             key={i}
-            onClick={() => setActive(i)}
+            onClick={() => {
+              setActive(i);
+              setTab(n.text);
+              console.log(n.text);
+            }}
             className={`${
               active === i ? `bg-primary text-background border-primary` : ``
             } bg-background rounded-full transition-all duration-300 border border-foreground/25 py-3 px-5 flex gap-3 items-center cursor-pointer`}
@@ -63,7 +86,7 @@ const CourseNav = () => {
         ))}
       </div>
       <div className="grid grid-cols-3 gap-5">
-        {courses.map((c, i) => (
+        {coursesFilter.map((c, i) => (
           <div
             key={i}
             className={`${i === 0 && `col-span-3 grid grid-cols-2 gap-12`} ${

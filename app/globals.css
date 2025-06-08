@@ -63,7 +63,7 @@
   --font-bm: var(--bm);
   --font-br: var(--br);
   --font-bs: var(--bs);
-  --animate-enter: enter 1s ease-in-out;
+  --animate-scroll: scroll 50s infinite linear;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -124,13 +124,11 @@ section {
   @apply container mx-auto max-w-7xl px-5 xl:px-0 py-24 space-y-12;
 }
 
-@keyframes enter {
+@keyframes scroll {
   0% {
-    opacity: 0%;
-    transform: translateY(50px);
+    transform: translateX(-0%);
   }
   100% {
-    opacity: 100%;
-    transform: translateY(0px);
+    transform: translateX(-100%);
   }
 }
