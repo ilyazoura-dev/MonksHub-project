@@ -27,7 +27,7 @@ type Tabs =
   | "accounting"
   | "marketing";
 
-const CourseNav = () => {
+const CourseNav2 = () => {
   const [active, setActive] = useState(0);
   const [tab, setTab] = useState<Tabs>("all categories");
 
@@ -89,15 +89,11 @@ const CourseNav = () => {
         {coursesFilter.map((c, i) => (
           <div
             key={i}
-            className={`${i === 0 && `col-span-3 grid grid-cols-2 gap-12`} ${
-              i > 3 && `hidden`
+            className={`${
+              i > 8 && `hidden`
             } p-5 group bg-background rounded-3xl border border-foreground/10 space-y-5`}
           >
-            <div
-              className={`rounded-2xl overflow-hidden w-full ${
-                i === 0 && `h-full`
-              }`}
-            >
+            <div className={`rounded-2xl overflow-hidden w-full`}>
               <Image
                 src={`/courses/${c.image}.webp`}
                 alt={c.title}
@@ -106,39 +102,17 @@ const CourseNav = () => {
                 className="group-hover:scale-125 transition-all duration-300 w-full h-full"
               />
             </div>
-            <div
-              className={`space-y-5 ${
-                i === 0 && `flex flex-col justify-between`
-              }`}
-            >
+            <div className={`space-y-5`}>
               <div className="flex justify-between items-center">
                 <span className="py-1 px-4 rounded-full capitalize border border-foreground/10">
                   {c.category}
                 </span>
-                <h5 className={`${i === 0 && `hidden`} text-primary`}>
-                  ${c.price}.00
-                </h5>
-                {i === 0 && (
-                  <span
-                    className={`bm bg-foreground rounded-full py-2 px-4 text-background`}
-                  >
-                    🔥 Popular
-                  </span>
-                )}
+                <h5 className={`text-primary`}>${c.price}.00</h5>
               </div>
-              <h5 className={`${i === 0 && `hidden`}`}>{c.title}</h5>
-              <h3 className={`${i === 0 ? `block` : `hidden`}`}>{c.title}</h3>
-              {i === 0 && (
-                <p className="bl">
-                  This course provides an in-depth exploration of HTML, CSS, and
-                  advanced web development techniques.
-                </p>
-              )}
-              <div
-                className={`flex justify-between items-center ${
-                  i === 0 && `border-b border-foreground/10 pb-5`
-                }`}
-              >
+              <h5>{c.title}</h5>
+              {/* <h3 className={`${i === 0 ? `block` : `hidden`}`}>{c.title}</h3> */}
+
+              <div className={`flex justify-between items-center`}>
                 <span className="flex gap-2 items-center">
                   <ClockIcon className="size-5" />
                   <p className="br">
@@ -152,12 +126,6 @@ const CourseNav = () => {
                   <p className="br">{c.lectures} lectures</p>
                 </span>
               </div>
-              {i === 0 && (
-                <div className="flex justify-between items-center">
-                  <h3 className="text-primary">${c.price}.00</h3>
-                  <Btn link="/">View Details</Btn>
-                </div>
-              )}
             </div>
           </div>
         ))}
@@ -166,4 +134,4 @@ const CourseNav = () => {
   );
 };
 
-export default CourseNav;
+export default CourseNav2;
