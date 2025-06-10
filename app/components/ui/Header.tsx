@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Logo from "../Logo";
 import Link from "next/link";
 import Btn from "../Btn";
+import { usePathname } from "next/navigation";
 
 interface SubLink {
   title: string;
@@ -15,6 +17,7 @@ interface NavLink {
 }
 
 const Header = () => {
+  const path = usePathname();
   const links: NavLink[] = [
     {
       title: "Home",
@@ -56,11 +59,19 @@ const Header = () => {
         <div className="flex justify-center gap-8">
           {links.map((l, i) => (
             <Link href={`${l.link}`} key={i}>
-              <p className="bm">{l.title}</p>
+              <p
+                className={`bm ${
+                  `${path.split("/")}` == `${l.link?.split("/")}`
+                    ? `text-primary`
+                    : ``
+                }`}
+              >
+                {l.title}
+              </p>
             </Link>
           ))}
         </div>
-        <Btn link="/mentors">View All Mentors</Btn>
+        <Btn link="mentors">View All Mentors</Btn>
       </div>
     </div>
   );

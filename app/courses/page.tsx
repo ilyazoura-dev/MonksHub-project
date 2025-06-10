@@ -88,7 +88,7 @@ const CoursesPage = () => {
                 {i === 0 && (
                   <div className="flex justify-between items-center">
                     <h3 className="text-primary">${c.price}.00</h3>
-                    <Btn link="/">View Details</Btn>
+                    <Btn link="">View Details</Btn>
                   </div>
                 )}
               </div>
@@ -100,7 +100,9 @@ const CoursesPage = () => {
         <section>
           <h2 className="text-center">Explore Our All Courses</h2>
           <CourseNav2 />
-          <Btn link="/courses">View More Courses</Btn>
+          <div className="w-fit mx-auto">
+            <Btn link="courses">View More Courses</Btn>
+          </div>
         </section>
       </div>
       <div className="bg-foreground">
@@ -109,7 +111,7 @@ const CoursesPage = () => {
             <h2 className="max-w-3xl text-background">
               Learn from the Best Talent in the Industry
             </h2>
-            <Btn link="/mentors">View All Mentors</Btn>
+            <Btn link="mentors">View All Mentors</Btn>
           </div>
           <MentorsShowCase />
         </section>
