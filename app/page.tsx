@@ -112,8 +112,8 @@ export default function Home() {
 
   return (
     <main>
-      <div className="bg-gradient-to-r from-primary-shade-2 via-secondary-shade-2 to-accent-shade-2 pt-10">
-        <div className="bg-gradient-to-t from-back-shade-2 from-0% to-transparent to-60%">
+      <div className="gradient">
+        <div className="gradient-blend">
           <section className="relative">
             <div className="space-y-4">
               <div className="px-4 flex items-center gap-3 w-fit mx-auto py-1 rounded-full bg-background/50 backdrop-blur-lg border border-white/25">

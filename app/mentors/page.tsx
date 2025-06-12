@@ -49,11 +49,17 @@ const MentorsPage = () => {
     },
   ];
   return (
-    <main className="pt-14">
+    <main>
+      <div className="gradient">
+        <div className="gradient-blend">
+          <section>
+            <h1 className="max-w-4xl">
+              Meet Our Industry's Leading Expert Mentors
+            </h1>
+          </section>
+        </div>
+      </div>
       <section>
-        <h1 className="max-w-4xl">
-          Meet Our Industry's Leading Expert Mentors
-        </h1>
         <div className="grid grid-cols-4 gap-5">
           {mentors.map((m, i) => (
             <div

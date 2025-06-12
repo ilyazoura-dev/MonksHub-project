@@ -13,11 +13,17 @@ import JoinUsCard from "../components/JoinUsCard";
 
 const CoursesPage = () => {
   return (
-    <main className="pt-10">
+    <main>
+      <div className="gradient">
+        <div className="gradient-blend">
+          <section>
+            <h1 className="max-w-4xl">
+              We Offer an Outstanding Learning Experience
+            </h1>
+          </section>
+        </div>
+      </div>
       <section>
-        <h1 className="max-w-4xl">
-          We Offer an Outstanding Learning Experience
-        </h1>
         <div className="grid grid-cols-3 gap-5">
           {courses.map((c, i) => (
             <div
